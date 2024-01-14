@@ -5,7 +5,7 @@ readonly SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
 TYPE_NAME="$1"
 TYPE_DIR="${SCRIPT_DIR}/${TYPE_NAME}"
-if [ "${TYPE_NAME}" = "" -o  ! -d "${TYPE_DIR}" ]; then
+if [ "${TYPE_NAME}" = "" -o ! -d "${TYPE_DIR}" ]; then
   dirs=""
   for FILE in "${SCRIPT_DIR}"/*; do
     if [ -d "${FILE}" ]; then
