@@ -67,7 +67,7 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 readonly LANG="$1"
-readonly OPT="$2"
+readonly OPT="${2:-"base"}"
 
 TEMP_DIR="$(mktemp -d)"
 readonly TEMP_DIR
@@ -88,4 +88,4 @@ if ! inList "${OPTS}" "${OPT}"; then
   exit 1
 fi
 
-template "${TEMP_DIR}/${LANG}/${OPT}" .
+template "${TEMP_DIR}/${LANG}/${OPT}/." .
