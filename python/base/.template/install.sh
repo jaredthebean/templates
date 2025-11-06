@@ -11,8 +11,13 @@ fi
 for tool in ${PY_LINT_TOOLS}; do
   uv tool install "${tool}"
 done
-uvx update-shell > /dev/null 2>&1
-${SHELL}
+output=$(uv tool update-shell 2>&1)
+# If the uv tools bin PATH needed to be added
+# then we get output with the word "update" in it
+# brittle, but there isn't a different return code so ¯\_(ツ)_/¯
+if [ -z "${output##Updated *}" ]; then
+  ${SHELL}
+fi
 USER=$(whoami)
 chown -R "${USER}:${USER}" .
 pre-commit install
