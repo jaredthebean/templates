@@ -89,3 +89,6 @@ if ! inList "${OPTS}" "${OPT}"; then
 fi
 
 template "${TEMP_DIR}/${LANG}/${OPT}/." .
+
+# Cleanup
+rm -rf .template "${TEMP_DIR}"
