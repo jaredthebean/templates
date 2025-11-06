@@ -1,5 +1,9 @@
 repos:
   - repo: https://github.com/duolingo/pre-commit-hooks.git
-    rev: 1.7.1
+    rev: 1.7.3
     hooks:
       - id: duolingo
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0
+    hooks:
+      - id: shellcheck

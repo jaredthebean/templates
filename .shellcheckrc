@@ -1,0 +1,4 @@
+disable=SC3043
+enable=require-variable-braces
+external-sources=true
+source-path=.
